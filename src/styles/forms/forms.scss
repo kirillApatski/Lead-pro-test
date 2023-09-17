@@ -528,7 +528,12 @@
         }
         &:last-child {
           .btn-submit {
-            padding: 13px 41px;
+            padding: 20px 40px;
+
+            @media (max-width: 320px) {
+              padding: 13px 41px;
+
+            }
             .loader {
               display: none;
               animation: spin 1.5s linear infinite;
