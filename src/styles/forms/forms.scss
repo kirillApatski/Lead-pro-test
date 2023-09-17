@@ -729,12 +729,16 @@
 .error-phone {
   display: none;
   position: absolute;
-  top: 17%;
+  top: 25%;
   left: 0;
   color: var(--color-warning-700);
-  font-size: 13px;
+  font-size: 16px;
   font-style: italic;
   font-weight: 400;
+  @media (max-width: 680px) {
+    top: 17px;
+    font-size: 13px;
+  }
 }
 
 .error-show {
