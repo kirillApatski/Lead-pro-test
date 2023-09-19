@@ -7,6 +7,9 @@
   border-radius: 60px;
   background: var(--color-white);
   box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.10);
+  @media (max-width: 320px) {
+    align-items: start;
+  }
   &.modal-show {
     display: flex;
   }
@@ -14,8 +17,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 40px;
     padding: 200px 0;
+
+    .title {
+      text-align: center;
+    }
     .img {
       max-width: 96px;
       &img {

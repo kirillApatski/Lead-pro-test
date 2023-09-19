@@ -29,17 +29,17 @@ export const validateInputPhone = (inputValue: string | undefined) => {
     if (country === 'BY') {
       if (inputValue && validateNumberPhoneBY.test(inputValue)) {
         errorMessagePhone?.classList.remove('error-show')
+        inputPhone?.classList.remove('warning')
         checkFormValidity()
-
       } else {
         errorMessagePhone?.classList.add('error-show')
+        inputPhone?.classList.add('warning')
       }
     }
     if (country === 'RU') {
       if (inputValue && validateNumberPhoneRU.test(inputValue)) {
         errorMessagePhone?.classList.remove('error-show')
         checkFormValidity()
-
       } else {
         errorMessagePhone?.classList.add('error-show')
       }
@@ -50,6 +50,7 @@ export const validateInputPhone = (inputValue: string | undefined) => {
 export const validateUserAgree = () => {
   checkFormValidity()
 }
+
 function checkFormValidity() {
   const isNameValid = inputName && inputName.value.trim() !== '' && !inputName.classList.contains('warning');
   const isPhoneValid = (inputPhone?.value.length === maxLengthNumberPhoneBY || inputPhone?.value.length === maxLengthNumberPhoneRU) && errorMessagePhone && !errorMessagePhone.classList.contains('error-show');
@@ -57,7 +58,9 @@ function checkFormValidity() {
 
   if (submitButton && isNameValid && isPhoneValid && isAgreeChecked) {
     submitButton.classList.add('btn-active')
+    submitButton.setAttribute('disable', 'false')
   } else {
     submitButton?.classList.remove('btn-active')
+    submitButton?.setAttribute('disable', 'true')
   }
 }

@@ -451,8 +451,11 @@
           margin-top: 30px;
           margin-bottom: 40px;
           @media (max-width: 320px) {
-            margin-top: 15px;
+            margin-top: 20px;
             margin-bottom: 20px;
+          }
+          &.warning {
+            border: 1px solid var(--color-warning-700);
           }
         }
       }
@@ -539,8 +542,12 @@
             .loader {
               display: none;
               animation: spin 1.5s linear infinite;
-              width: 16px;
-              height: 16px;
+              width: 41px;
+              height: 41px;
+              @media (max-width: 320px) {
+                height: 20px;
+                width: 20px;
+              }
               &.show-loader {
                 display: inline-block;
               }
@@ -743,7 +750,11 @@
   font-style: italic;
   font-weight: 400;
   @media (max-width: 680px) {
-    top: 17px;
+    top: 41px;
+    font-size: 13px;
+  }
+  @media (max-width: 320px) {
+    top: 23px;
     font-size: 13px;
   }
 }
