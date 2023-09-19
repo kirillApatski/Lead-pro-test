@@ -1,5 +1,6 @@
 import {buttonNextTwoToStep} from "../next-step.ts";
-
+export const valueInputRange: HTMLInputElement | null = document.querySelector('#ageRange')
+export const userAge = document.querySelector('#age-value')
 export const genderButtons: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[name="gender"]');
 
 export const changedRadioButtons = (genderButton: HTMLInputElement) => {
@@ -12,8 +13,7 @@ export const changedRadioButtons = (genderButton: HTMLInputElement) => {
   });
 }
 
-export const valueInputRange: HTMLInputElement | null = document.querySelector('#ageRange')
-const userAge = document.querySelector('#age-value')
+
 
 export const changedValueInputRange = () => {
   if (userAge) {
